@@ -4,37 +4,21 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] int velocidad = 5;
-    [SerializeField] float poderJugador = 10;
-    [SerializeField] float vida = 100;
-    [SerializeField] float cantVida = 5;
-    [SerializeField] Vector3 direccion;
-    [SerializeField] bool lePegue = false;
+    [SerializeField] Animator anim;
+    [SerializeField] float rotationSpeed = 200f;
+    [SerializeField] float runningSpeed = 2f;
+    private float x, y;
+
     // Start is called before the first frame update
     void Start()
     {
-        PosicionInicial();
-        CurarJugador();
-        Debug.Log("La vida del jugador curado es " + vida.ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!lePegue)
-        {
-            PegarleAJugador();
-            Debug.Log("Ahora le pegué y quedó con " + vida.ToString());
-            lePegue = true;
-        }
-        Move(direccion);
-
-        if(vida <= 0f)
-        {
-            Debug.Log("GAME OVER");
-            UnityEditor.EditorApplication.isPlaying = false;
-        }
-            
+        anim = GetComponent<Animator>();
+        Move();
         /*if (Input.GetKey(KeyCode.W))
         {
             Move(Vector3.forward);
@@ -57,24 +41,15 @@ public class Movement : MonoBehaviour
         }*/
     }
 
-    void Move(Vector3 moverseA)
+    protected void Move()
     {
-        transform.Translate(moverseA * velocidad * Time.deltaTime);
-    }
+        x = Input.GetAxis("Horizontal");
+        y = Input.GetAxis("Vertical");
 
-    void PosicionInicial()
-    {
-        transform.Translate(new Vector3(0, 0, 0));
-    }
+        transform.Translate(x * Time.deltaTime * runningSpeed, 0, y * Time.deltaTime * runningSpeed);
 
-    void CurarJugador()
-    {
-        vida += cantVida;
-    }
-
-    void PegarleAJugador()
-    {
-        vida -= cantVida * 0.5f;
+        anim.SetFloat("getX", x);
+        anim.SetFloat("getY", y);
     }
 
 }
