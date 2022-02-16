@@ -45,8 +45,8 @@ public class Movement : MonoBehaviour
     {
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
-
-        transform.Translate(x * Time.deltaTime * runningSpeed, 0, y * Time.deltaTime * runningSpeed);
+        var indepSpeed = Time.deltaTime * runningSpeed;
+        transform.Translate(x * indepSpeed, 0, y * indepSpeed);
 
         anim.SetFloat("getX", x);
         anim.SetFloat("getY", y);
