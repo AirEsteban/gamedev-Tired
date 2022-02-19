@@ -5,13 +5,14 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] Animator anim;
-    [SerializeField] float rotationSpeed = 200f;
     [SerializeField] float runningSpeed = 2f;
+    private CharacterController charCont;
     private float x, y;
 
     // Start is called before the first frame update
     void Start()
     {
+        charCont = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -19,34 +20,21 @@ public class Movement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         Move();
-        /*if (Input.GetKey(KeyCode.W))
-        {
-            Move(Vector3.forward);
-            CurarJugador();
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            Move(Vector3.back);
-            CurarJugador();
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            Move(Vector3.left);
-            PegarleAJugador();
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            Move(Vector3.right);
-            PegarleAJugador();
-        }*/
     }
 
     protected void Move()
     {
+        var actRunSpeed = runningSpeed;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            actRunSpeed = runningSpeed * 2f;
+        }
+
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
-        var indepSpeed = Time.deltaTime * runningSpeed;
-        transform.Translate(x * indepSpeed, 0, y * indepSpeed);
+        var indepSpeed = Time.deltaTime * actRunSpeed;
+        Debug.Log("Indep. Speed: " + indepSpeed);
+        charCont.Move(new Vector3(x * indepSpeed, 0f, y * indepSpeed));
 
         anim.SetFloat("getX", x);
         anim.SetFloat("getY", y);
