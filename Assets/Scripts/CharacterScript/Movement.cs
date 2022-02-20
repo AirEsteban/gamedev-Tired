@@ -33,7 +33,6 @@ public class Movement : MonoBehaviour
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
         var indepSpeed = Time.deltaTime * actRunSpeed;
-        Debug.Log("Indep. Speed: " + indepSpeed);
         charCont.Move(new Vector3(x * indepSpeed, 0f, y * indepSpeed));
 
         anim.SetFloat("getX", x);
