@@ -59,9 +59,9 @@
     <Compile Include="Assets\Scripts\DoorAnimationScript\OpenDoorAnimation.cs" />
     <Compile Include="Assets\Scripts\CharacterScript\Attack.cs" />
     <Compile Include="Assets\Scripts\CharacterScript\Movement.cs" />
-    <Compile Include="Assets\Scripts\CharacterScript\CameraMovement.cs" />
-    <Compile Include="Assets\Scripts\HelpObject\RotationBehavoiur.cs" />
     <Compile Include="Assets\Scripts\LightingScripts\OnOffLamp.cs" />
+    <Compile Include="Assets\Scripts\HelpObject\RotationBehavoiur.cs" />
+    <Compile Include="Assets\Scripts\Enemies\FollowWayPoints.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

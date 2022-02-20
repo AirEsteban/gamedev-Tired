@@ -6,8 +6,9 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] Animator anim;
     [SerializeField] float runningSpeed = 2f;
+    [SerializeField] float rotationSpeed  = 5f;
     private CharacterController charCont;
-    private float x, y;
+    private float x, xDir, y;
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +31,30 @@ public class Movement : MonoBehaviour
             actRunSpeed = runningSpeed * 2f;
         }
 
+        // Character Controller
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
         var indepSpeed = Time.deltaTime * actRunSpeed;
-        charCont.Move(new Vector3(x * indepSpeed, 0f, y * indepSpeed));
+        
+        charCont.Move(transform.TransformDirection(x * indepSpeed, 0f, y * indepSpeed));
 
+        //RotateCharacter
+        RotateCharacter();
+
+        // Animation Playing
+        SetAnimatorParams();
+    }
+
+    protected void RotateCharacter()
+    {
+       xDir += Input.GetAxis("Mouse X");
+       transform.localRotation = Quaternion.Euler(0f, xDir * rotationSpeed ,0f);
+    }
+
+
+    protected void SetAnimatorParams()
+    {
+        // Animator Params
         anim.SetFloat("getX", x);
         anim.SetFloat("getY", y);
     }
