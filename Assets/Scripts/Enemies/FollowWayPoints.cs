@@ -7,11 +7,13 @@ public class FollowWayPoints : MonoBehaviour
     [SerializeField] List<Transform> wayPoints = new List<Transform>();
     [SerializeField] Transform attackedObj;
     [SerializeField] float charSpeed = 2f;
+    [SerializeField] Animator anim;
     private int actIndex;
     // Start is called before the first frame update
     void Start()
     {
         actIndex = 0;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,18 +24,18 @@ public class FollowWayPoints : MonoBehaviour
 
     private void MakeBehaviour()
     {
-        
+        anim.SetBool("walk", true);
         var attackedObjPos = attackedObj.position - gameObject.transform.position;
-        //Debug.Log("Magnitud: " + nextWp.magnitude);
-        //Debug.Log("Magnitud a Player: " + Mathf.Abs(attackedObjPos.magnitude));
         if (Mathf.Abs(attackedObjPos.magnitude) <= 3f)
         {
-            Debug.Log("Attack gato attack");
-            // play attack animation.
+            anim.SetBool("walk", false);
+            anim.SetBool("attack", true);
+            //gameObject.transform.LookAt(attackedObj.transform.position, Vector3.up);
+            //Debug.Log("Attack gato attack");
         }
         else
         {
-            Debug.Log("Sigo mi camino");
+            //Debug.Log("Sigo mi camino");
             Follow();
         }
         
@@ -42,6 +44,8 @@ public class FollowWayPoints : MonoBehaviour
     private void Follow()
     {
         var nextWp = wayPoints[actIndex].position - gameObject.transform.position;
+        anim.SetBool("attack", false);
+        anim.SetBool("walk", true);
         if (nextWp.magnitude > 0.1f)
         {
             gameObject.transform.LookAt(wayPoints[actIndex].position, Vector3.up);

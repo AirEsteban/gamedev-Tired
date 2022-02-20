@@ -1326,7 +1326,27 @@ MonoBehaviour:
   - {fileID: 373828520}
   - {fileID: 361564442}
   attackedObj: {fileID: 1745104917}
-  charSpeed: 2.5
+  charSpeed: 1.25
+  anim: {fileID: 0}
+--- !u!95 &2108291387
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108291382}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f32692c8e3efed24c8ab1cdec9e4c222, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1485599629295685393 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3348239131339339239, guid: c82bc1138262bca40b52e54a32f2d917, type: 3}
