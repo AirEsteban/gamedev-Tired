@@ -6,13 +6,13 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     [SerializeField] Animator anim;
+    [SerializeField] GameObject SimpleAttackObj;
     //private EnumAttackType attackType;
     //[SerializeField] GameObject[] attackBullets;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        //attackType = EnumAttackType.Simple;
     }
 
     // Update is called once per frame
@@ -26,22 +26,7 @@ public class Attack : MonoBehaviour
 
     private void ThrowAttack()
     {
-        //attackType = EnumAttackType.Simple;
         anim.SetTrigger("attackTrigger");
-        //anim.ResetTrigger("attackTrigger");
-    }
-
-    private void AttackType()
-    {
-       /* switch (attackType)
-        {
-            case EnumAttackType.Simple:
-                Instantiate(attackBullets[(int)EnumAttackType.Simple]);
-                break;
-            default:
-                Debug.Log("No attack found.");
-                break;
-        }
-       */
+        Instantiate(SimpleAttackObj);
     }
 }

@@ -1090,6 +1090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  SimpleAttackObj: {fileID: 3994095019797676892, guid: a6d113d643b01194c952c31a80f56c72, type: 3}
 --- !u!1001 &1978118272
 PrefabInstance:
   m_ObjectHideFlags: 0
