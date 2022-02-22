@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.33962265, g: 0.3503026, b: 0.3773585, a: 1}
+  m_SubtractiveShadowColor: {r: 0.5203275, g: 0.5220996, b: 0.5283019, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -355,7 +355,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1090,7 +1090,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  attackBullets: []
 --- !u!1001 &1978118272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1098,6 +1097,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1485599629295685393}
     m_Modifications:
+    - target: {fileID: 443302420677662578, guid: f8e2851a93d791a478db5e6fb184816a, type: 3}
+      propertyPath: m_Intensity
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1781792293370774327, guid: f8e2851a93d791a478db5e6fb184816a, type: 3}
       propertyPath: m_Name
       value: FirstCeiling
@@ -1361,7 +1364,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 443302420677662578, guid: f8e2851a93d791a478db5e6fb184816a, type: 3}
       propertyPath: m_Intensity
-      value: 2.5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1781792293370774327, guid: f8e2851a93d791a478db5e6fb184816a, type: 3}
       propertyPath: m_Name

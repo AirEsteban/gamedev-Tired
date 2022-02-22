@@ -2,38 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnumAttackType { Simple = 0 }
+//public enum EnumAttackType { Simple = 0 }
 public class Attack : MonoBehaviour
 {
     [SerializeField] Animator anim;
-    private EnumAttackType attackType;
-    [SerializeField] GameObject[] attackBullets;
+    //private EnumAttackType attackType;
+    //[SerializeField] GameObject[] attackBullets;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        attackType = EnumAttackType.Simple;
+        //attackType = EnumAttackType.Simple;
     }
 
     // Update is called once per frame
     void Update()
     {
-        ThrowAttack();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ThrowAttack();
+        }
     }
 
     private void ThrowAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            attackType = EnumAttackType.Simple;
-            Invoke("AttackType", 0.7f);
-            anim.SetBool("simpleAttack", true);
-        }
+        //attackType = EnumAttackType.Simple;
+        anim.SetTrigger("attackTrigger");
+        //anim.ResetTrigger("attackTrigger");
     }
 
     private void AttackType()
     {
-        switch (attackType)
+       /* switch (attackType)
         {
             case EnumAttackType.Simple:
                 Instantiate(attackBullets[(int)EnumAttackType.Simple]);
@@ -42,6 +42,6 @@ public class Attack : MonoBehaviour
                 Debug.Log("No attack found.");
                 break;
         }
-
+       */
     }
 }
