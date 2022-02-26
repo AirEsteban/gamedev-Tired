@@ -7,26 +7,50 @@ public class Attack : MonoBehaviour
 {
     [SerializeField] Animator anim;
     [SerializeField] GameObject SimpleAttackObj;
-    //private EnumAttackType attackType;
-    //[SerializeField] GameObject[] attackBullets;
+    [SerializeField] Rigidbody rbSimpleAttackObj;
+    [SerializeField] Transform attackPoint;
+
+    // auxiliar
+    [SerializeField] float timeToAttack = 0.72f;
+    [SerializeField] float auxTimetoAttack;
+
+    [SerializeField] float bulletSpeed = 3f;
+    [SerializeField] bool canAttack;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        canAttack = true;
+        auxTimetoAttack = timeToAttack;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canAttack)
         {
-            ThrowAttack();
+            ThrowAttack(this.anim);
+            canAttack = false;
+        }
+        else
+        {
+            if (!canAttack && auxTimetoAttack > 0f)
+            {
+                auxTimetoAttack -= Time.deltaTime;
+            }
+            else
+            {
+                auxTimetoAttack = timeToAttack;
+                canAttack = true;
+            }
         }
     }
 
-    private void ThrowAttack()
+    private void ThrowAttack(Animator anim)
     {
         anim.SetTrigger("attackTrigger");
-        Instantiate(SimpleAttackObj);
+        var bullet = Instantiate(SimpleAttackObj, attackPoint.position, Quaternion.identity);
+        bullet.GetComponent<Rigidbody>().AddForce(attackPoint.forward * bulletSpeed, ForceMode.Impulse);
     }
 }

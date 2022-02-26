@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour
     protected void RotateCharacter()
     {
        xDir += Input.GetAxis("Mouse X");
-       transform.localRotation = Quaternion.Euler(0f, xDir * rotationSpeed ,0f);
+       transform.localRotation = Quaternion.Euler(0, xDir * rotationSpeed ,0f);
     }
 
 
