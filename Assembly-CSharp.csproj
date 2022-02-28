@@ -56,14 +56,17 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Enemies\SyringeColliderScript.cs" />
     <Compile Include="Assets\Scripts\DoorAnimationScript\OpenDoorAnimation.cs" />
     <Compile Include="Assets\Scripts\Enemies\FollowWpAndAttack.cs" />
+    <Compile Include="Assets\Scripts\CharacterScript\ColliderScript.cs" />
     <Compile Include="Assets\Scripts\CharacterScript\Attack.cs" />
     <Compile Include="Assets\Scripts\CharacterScript\Movement.cs" />
     <Compile Include="Assets\Scripts\LightingScripts\OnOffLamp.cs" />
     <Compile Include="Assets\Scripts\HelpObject\RotationBehavoiur.cs" />
-    <Compile Include="Assets\Scripts\CharacterScript\ColliderScript.cs" />
-    <Compile Include="Assets\Scripts\Enemies\SyringeColliderScript.cs" />
+    <Compile Include="Assets\Scripts\GelGenerator\GelGenerator.cs" />
+    <Compile Include="Assets\Scripts\GelGenerator\GelBallCollider.cs" />
+    <Compile Include="Assets\Scripts\KeysScripts\RotationTraslationScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
