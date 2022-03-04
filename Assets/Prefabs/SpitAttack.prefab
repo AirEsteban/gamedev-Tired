@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6082491091504177995}
   - component: {fileID: 7456031694644155061}
   - component: {fileID: 1111584220227393192}
+  - component: {fileID: 5234626725974624854}
   m_Layer: 0
   m_Name: SpitAttack
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8176919979710934851}
   m_LocalRotation: {x: -0.5233482, y: -0.58276975, z: 0.47181624, w: 0.40481544}
-  m_LocalPosition: {x: -29.664715, y: -54.77903, z: -86.18442}
+  m_LocalPosition: {x: -29.658, y: -54.778, z: -86.183}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4820,7 +4821,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &1111584220227393192
 CapsuleCollider:
@@ -4832,7 +4833,20 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.24296795
-  m_Height: 0.93833745
-  m_Direction: 1
-  m_Center: {x: -0.019100532, y: 2.296116e-11, z: -8.137216e-12}
+  m_Radius: 0.12613364
+  m_Height: 0.6535663
+  m_Direction: 2
+  m_Center: {x: 0.042305, y: 0.0000000019932938, z: 0.12199554}
+--- !u!114 &5234626725974624854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8176919979710934851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c365520c37eb454cbccf724eb5d7f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 40

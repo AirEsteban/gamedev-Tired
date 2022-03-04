@@ -10,6 +10,7 @@ public class FollowWpAndAttack : MonoBehaviour
     [SerializeField] GameObject attackPoint;
     [SerializeField] bool canAttack = false;
     [SerializeField] float timeToAttack = 0.85f;
+    [SerializeField] float enemyLife = 125f;
     private float auxTimeToAttack = 0f;
     // Transform Properties
     [SerializeField] List<Transform> wayPoints = new List<Transform>();
@@ -99,6 +100,11 @@ public class FollowWpAndAttack : MonoBehaviour
                 auxTimeToAttack = timeToAttack;
             }
         }
+    }
+
+    public void TakeDmg(float dmg)
+    {
+        enemyLife -= dmg;
     }
 
 }

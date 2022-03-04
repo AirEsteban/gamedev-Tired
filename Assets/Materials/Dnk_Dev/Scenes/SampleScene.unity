@@ -3721,6 +3721,7 @@ MonoBehaviour:
   attackPoint: {fileID: 799499174}
   canAttack: 1
   timeToAttack: 2.54
+  enemyLife: 125
   wayPoints:
   - {fileID: 1425120316}
   - {fileID: 373828520}

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Syringe
+  - FirstDoorKey
+  - GelBall
   layers:
   - Default
   - TransparentFX

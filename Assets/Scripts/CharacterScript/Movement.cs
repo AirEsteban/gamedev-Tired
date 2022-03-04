@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float rotationSpeed  = 5f;
     private CharacterController charCont;
     private float x, xDir, y;
+    private float playerLife = 100f;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +58,17 @@ public class Movement : MonoBehaviour
         // Animator Params
         anim.SetFloat("getX", x);
         anim.SetFloat("getY", y);
+    }
+
+    public void TakeDmg(float dmg)
+    {
+        playerLife -= dmg;
+
+        if(playerLife <= 0f)
+        {
+            Debug.Log("Player Life: " + playerLife);
+            // Game Over
+        }
     }
 
 }

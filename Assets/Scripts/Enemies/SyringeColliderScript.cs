@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SyringeColliderScript : MonoBehaviour
 {
+    [SerializeField] float damage = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +17,15 @@ public class SyringeColliderScript : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision objCollision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        // AttackDmg
+        if (objCollision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Ataque al player");
+            objCollision.gameObject.GetComponent<Movement>().TakeDmg(damage);
         }
-        
+
+        // Destroying object on collision;
+        Destroy(this.gameObject);
     }
 }
