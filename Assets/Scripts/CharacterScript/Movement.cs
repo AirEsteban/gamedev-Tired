@@ -44,10 +44,6 @@ public class Movement : MonoBehaviour
 
         // Animation Playing
         SetAnimatorParams();
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            dropKey();
-        }
     }
 
     protected void RotateCharacter()
@@ -74,11 +70,4 @@ public class Movement : MonoBehaviour
             // Game Over
         }
     }
-
-    private void dropKey()
-    {
-        var pos = this.transform.position + (Vector3.forward * 5);
-        GameManager.DropItem("RustKey", pos);
-    }
-
 }

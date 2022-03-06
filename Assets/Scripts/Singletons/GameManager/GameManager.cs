@@ -32,11 +32,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Method to drop an item at certain point. not implemented really good rn.
     public static void DropItem(string findTag, Vector3 position)
     {
         var objectFound = inventory.Find(item => item.tag == findTag);
-        objectFound.transform.position = position;
+        // set position
         objectFound.SetActive(true);
-        
+    }
+
+    public static bool HaveItem(string tagItem)
+    {
+        return true;
     }
 }

@@ -61,14 +61,15 @@
     <Compile Include="Assets\Scripts\KeysScripts\RotationTraslationScript.cs" />
     <Compile Include="Assets\Scripts\CharacterScript\SpitAttackCollider.cs" />
     <Compile Include="Assets\Scripts\DoorAnimationScript\OpenDoorAnimation.cs" />
+    <Compile Include="Assets\Scripts\Singletons\GameManager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\FollowWpAndAttack.cs" />
     <Compile Include="Assets\Scripts\CharacterScript\Attack.cs" />
     <Compile Include="Assets\Scripts\CharacterScript\Movement.cs" />
     <Compile Include="Assets\Scripts\LightingScripts\OnOffLamp.cs" />
     <Compile Include="Assets\Scripts\GelGenerator\GelBallCollider.cs" />
-    <Compile Include="Assets\Scripts\HelpObject\RotationBehavoiur.cs" />
     <Compile Include="Assets\Scripts\GeneralPurposesScript\SaveToInventory.cs" />
-    <Compile Include="Assets\Scripts\Singletons\GameManager\GameManager.cs" />
+    <Compile Include="Assets\Scripts\HelpObject\RotationBehavoiur.cs" />
+    <Compile Include="Assets\Scripts\DoorAnimationScript\DoubleDoorRaycast.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
