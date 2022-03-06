@@ -104,7 +104,9 @@ GameObject:
   - component: {fileID: 1212651609955258601}
   - component: {fileID: 7894584239176248031}
   - component: {fileID: 4518161432762947110}
-  - component: {fileID: 1973415011712194115}
+  - component: {fileID: 5426418437775961523}
+  - component: {fileID: 2755622677383452412}
+  - component: {fileID: 14572854}
   m_Layer: 0
   m_Name: rust_key
   m_TagString: Untagged
@@ -119,7 +121,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2778560364888367866}
-  m_LocalRotation: {x: 0.013737664, y: 0.012790805, z: 0.70633054, w: 0.70763326}
+  m_LocalRotation: {x: 0.013741962, y: 0.012791294, z: 0.706331, w: 0.70763266}
   m_LocalPosition: {x: 3.744, y: 14.187, z: -17.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -176,17 +178,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1973415011712194115
-MeshCollider:
+--- !u!65 &5426418437775961523
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2778560364888367866}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1215533875317036940, guid: 0669f3d8f4b119f418a4bbe061cc198f, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.121932, y: 0.03910585, z: 0.23262405}
+  m_Center: {x: 5.600582e-18, y: -9.3132246e-10, z: -0.0000019036233}
+--- !u!114 &2755622677383452412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2778560364888367866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e5e30729233b648bb5c82c2dff5f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &14572854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2778560364888367866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55fe31fa3debfb48af47589418abc87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPrefab: {fileID: 2778560364888367866}
+  angleRotation: 1
+  wayPoints:
+  - {fileID: 0}
+  - {fileID: 0}

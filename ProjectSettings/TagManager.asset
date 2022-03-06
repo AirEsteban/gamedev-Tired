@@ -8,6 +8,7 @@ TagManager:
   - Syringe
   - FirstDoorKey
   - GelBall
+  - RustKey
   layers:
   - Default
   - TransparentFX
