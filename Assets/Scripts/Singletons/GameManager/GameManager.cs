@@ -42,6 +42,14 @@ public class GameManager : MonoBehaviour
 
     public static bool HaveItem(string tagItem)
     {
-        return true;
+        var found = false;
+        inventory.ForEach(item =>
+        {
+            if (item.CompareTag(tagItem))
+            {
+                found = true;
+            }
+        });
+        return found;
     }
 }

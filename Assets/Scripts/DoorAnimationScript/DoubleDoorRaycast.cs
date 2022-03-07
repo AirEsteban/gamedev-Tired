@@ -6,10 +6,10 @@ using UnityEngine.Playables;
 public class DoubleDoorRaycast : MonoBehaviour
 {
     [SerializeField] float rayDistance = 7f;
+    [SerializeField] string requiredKeyTag;
     private Ray rayCast;
     private PlayableDirector timeLine;
     private bool doorOpened;
-    [SerializeField] string requiredKeyTag;
     // Start is called before the first frame update
     private void Start()
     {
@@ -24,11 +24,18 @@ public class DoubleDoorRaycast : MonoBehaviour
         {
             if (hitInfo.collider != null)
             {
-                if (hitInfo.collider.gameObject.CompareTag("Player") 
-                    && !doorOpened 
-                    && GameManager.instance.get)
+                if (hitInfo.collider.gameObject.CompareTag("Player") && !doorOpened)
                 {
-                    timeLine.Play(timeLine.playableAsset);
+                    if (GameManager.HaveItem(requiredKeyTag))
+                    {
+                        doorOpened = true;
+                        timeLine.Play(timeLine.playableAsset);
+                    }
+                    else
+                    {
+                        Debug.Log("You need a key to open this door.");
+                        //SHOW ON UI THAT WE NEED A KEY
+                    }
                 }
             }
         }
