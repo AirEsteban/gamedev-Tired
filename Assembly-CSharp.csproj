@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\GelGenerator\GelGenerator.cs" />
     <Compile Include="Assets\Scripts\Enemies\SyringeColliderScript.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyUpgraded1\UpgradedAttack.cs" />
     <Compile Include="Assets\Scripts\KeysScripts\RotationTraslationScript.cs" />
     <Compile Include="Assets\Scripts\CharacterScript\SpitAttackCollider.cs" />
     <Compile Include="Assets\Scripts\DoorAnimationScript\OpenDoorAnimation.cs" />
@@ -70,7 +71,7 @@
     <Compile Include="Assets\Scripts\GelGenerator\GelBallCollider.cs" />
     <Compile Include="Assets\Scripts\GeneralPurposesScript\SaveToInventory.cs" />
     <Compile Include="Assets\Scripts\HelpObject\RotationBehavoiur.cs" />
-    <Compile Include="Assets\Scripts\Enemies\EnemyUpgraded1\UpgradedAttack.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyUpgraded1\UpgradedRayCast.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

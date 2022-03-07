@@ -7,7 +7,11 @@ public class SaveToInventory : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       GameManager.SaveItem(this.gameObject);
-       this.gameObject.SetActive(false);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameManager.instance.GotItuRustKey = true;
+            this.gameObject.SetActive(false);
+        }
+       
     }
 }

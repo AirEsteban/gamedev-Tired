@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class Movement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         Move();
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            LoadScene();
+        }
     }
 
     protected void Move()
@@ -69,5 +74,19 @@ public class Movement : MonoBehaviour
             Debug.Log("Player Life: " + playerLife);
             // Game Over
         }
+    }
+
+    private void LoadScene()
+    {
+        SceneManager.LoadScene("SampleScene");
+        if (GameManager.instance.GotItuRustKey)
+        {
+            Debug.Log("Got the Key");
+        }
+        else
+        {
+            Debug.Log("Didn't got the key");
+        }
+        
     }
 }
