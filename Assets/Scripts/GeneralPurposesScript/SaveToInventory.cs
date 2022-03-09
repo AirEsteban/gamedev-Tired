@@ -9,7 +9,7 @@ public class SaveToInventory : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GameManager.instance.GotItuRustKey = true;
+            GameManager.instance.gotItuRustKey = true;
             this.gameObject.SetActive(false);
         }
        

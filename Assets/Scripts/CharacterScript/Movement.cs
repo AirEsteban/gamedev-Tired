@@ -79,7 +79,7 @@ public class Movement : MonoBehaviour
     private void LoadScene()
     {
         SceneManager.LoadScene("SampleScene");
-        if (GameManager.instance.GotItuRustKey)
+        if (GameManager.instance.gotItuRustKey)
         {
             Debug.Log("Got the Key");
         }

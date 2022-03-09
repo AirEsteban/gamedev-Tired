@@ -26,7 +26,7 @@ public class DoubleDoorRaycast : MonoBehaviour
             {
                 if (hitInfo.collider.gameObject.CompareTag("Player") && !doorOpened)
                 {
-                    if (GameManager.instance.GotItuRustKey)
+                    if (GameManager.instance.gotItuRustKey)
                     {
                         doorOpened = true;
                         timeLine.Play(timeLine.playableAsset);
