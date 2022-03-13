@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] float runningSpeed = 2f;
     [SerializeField] float rotationSpeed  = 5f;
+    [SerializeField] TMPro.TextMeshProUGUI playerLifeText;
     private CharacterController charCont;
     private float x, xDir, y;
     private float playerLife = 100f;
@@ -16,6 +17,9 @@ public class Movement : MonoBehaviour
     void Start()
     {
         charCont = GetComponent<CharacterController>();
+        playerLife = 100f;
+        runningSpeed = 2f;
+        playerLifeText.SetText("100%");
     }
 
     // Update is called once per frame
@@ -34,7 +38,7 @@ public class Movement : MonoBehaviour
         var actRunSpeed = runningSpeed;
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            actRunSpeed = runningSpeed * 2f;
+            actRunSpeed = runningSpeed * 1.5f;
         }
 
         // Character Controller
@@ -68,20 +72,23 @@ public class Movement : MonoBehaviour
     public void TakeDmg(float dmg)
     {
         playerLife -= dmg;
-
-        if(playerLife <= 0f)
+        playerLifeText.SetText("{0}%", playerLife);
+        if (playerLife <= 0f)
         {
-            Debug.Log("Player Life: " + playerLife);
+            SceneManager.LoadScene((int)Scenes.FIRSTLEVEL);
             // Game Over
         }
     }
 
     private void LoadScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        // Como seria mejor manejar estas cuestiones? Digamos que quiero que reinicie la escena, pero si
+        // tengo la llave, que aparezca como inactiva asi no la veo más y puedo pasar directo por la puerta.
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         if (GameManager.instance.gotItuRustKey)
         {
             Debug.Log("Got the Key");
+
         }
         else
         {

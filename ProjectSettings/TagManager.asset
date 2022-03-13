@@ -9,6 +9,7 @@ TagManager:
   - FirstDoorKey
   - GelBall
   - ituRustKey
+  - NotificationText
   layers:
   - Default
   - TransparentFX

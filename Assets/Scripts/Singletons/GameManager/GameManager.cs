@@ -14,6 +14,15 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            if (gotItuRustKey)
+            {
+                var ituRustKey = GameObject.Find("ituRustKey");
+                if (null != ituRustKey)
+                {
+                    Debug.Log("entre al manager");
+                    ituRustKey.SetActive(false);
+                }
+            }
         }
         else
         {
