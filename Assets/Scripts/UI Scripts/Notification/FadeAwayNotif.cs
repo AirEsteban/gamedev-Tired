@@ -12,12 +12,7 @@ public class FadeAwayNotif : MonoBehaviour
         Debug.Log("fadeaway");
         if(null != notifText)
         {
-            while(auxTime > 0)
-            {
-                auxTime -= Time.deltaTime * 20f;
-                Debug.Log(auxTime);
-            }
-            notifText.enabled = false;
+            Debug.Log("ajsdjopas");
         }
     }
 
