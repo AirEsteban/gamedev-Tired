@@ -4,32 +4,27 @@ using UnityEngine;
 
 public class FollowWpAndAttack : MonoBehaviour
 {
-    // Character properties
-    [SerializeField] float charSpeed = 2f;
-    [SerializeField] float charSpeedRotation = 4.2f;
+    // Game objects
+    [SerializeField] ScriptableNormalEnemy enemyData;
     [SerializeField] GameObject attackPoint;
-    [SerializeField] bool canAttack = false;
-    [SerializeField] float timeToAttack = 0.85f;
-    [SerializeField] float enemyLife = 125f;
-    private float auxTimeToAttack = 0f;
+    [SerializeField] GameObject bullet;
+
     // Transform Properties
     [SerializeField] List<Transform> wayPoints = new List<Transform>();
     public Transform attackedObj;
-    // Animator Properties
-    protected Animator anim;
-    // Auxiliar Properties
-    private int actIndex;
-    // Bullet GameObject
-    [SerializeField] GameObject bullet;
-    [SerializeField] float bulletSpeed = 7f;
 
+    // Auxiliar properties
+    private float auxTimeToAttack = 0f;
+    private Animator anim;
+    private int actIndex;
+    public bool canAttack = false;
 
     // Start is called before the first frame update
     void Start()
     {
         actIndex = 0;
         anim = GetComponent<Animator>();
-        auxTimeToAttack = timeToAttack;
+        auxTimeToAttack = enemyData.timeToAttack;
     }
 
     // Update is called once per frame
@@ -45,7 +40,7 @@ public class FollowWpAndAttack : MonoBehaviour
         if (Mathf.Abs(attackedObjPos.magnitude) <= 5f)
         {
             var charRot = Quaternion.LookRotation(attackedObjPos, Vector3.up);
-            transform.localRotation = Quaternion.Lerp(transform.rotation, charRot, charSpeedRotation * Time.deltaTime);
+            transform.localRotation = Quaternion.Lerp(transform.rotation, charRot, enemyData.charSpeedRotation * Time.deltaTime);
             if (transform.localRotation.w <= 0.2f)
             {
                 anim.SetBool("walk", false);
@@ -68,8 +63,8 @@ public class FollowWpAndAttack : MonoBehaviour
         if (nextWp.magnitude > 0.1f)
         {
             var newRot = Quaternion.LookRotation(nextWp, Vector3.up);
-            transform.rotation = Quaternion.Lerp(transform.rotation, newRot, charSpeedRotation * Time.deltaTime);
-            gameObject.transform.Translate(transform.TransformDirection(nextWp.normalized) * Time.deltaTime * charSpeed, Space.Self);
+            transform.rotation = Quaternion.Lerp(transform.rotation, newRot, enemyData.charSpeedRotation * Time.deltaTime);
+            gameObject.transform.Translate(transform.TransformDirection(nextWp.normalized) * Time.deltaTime * enemyData.charSpeed, Space.Self);
         }
         else
         {
@@ -84,7 +79,7 @@ public class FollowWpAndAttack : MonoBehaviour
             anim.SetBool("attack", true);
             var projectile = Instantiate(bullet, attackPoint.transform.position, Quaternion.identity);
             projectile.transform.localRotation = transform.localRotation;
-            projectile.GetComponent<Rigidbody>().AddForce(attackedObjPos.normalized * bulletSpeed, ForceMode.Impulse);
+            projectile.GetComponent<Rigidbody>().AddForce(attackedObjPos.normalized * enemyData.bulletSpeed, ForceMode.Impulse);
             
             canAttack = false;
         }
@@ -97,14 +92,14 @@ public class FollowWpAndAttack : MonoBehaviour
             else
             {
                 canAttack = true;
-                auxTimeToAttack = timeToAttack;
+                auxTimeToAttack = enemyData.timeToAttack;
             }
         }
     }
 
     public void TakeDmg(float dmg)
     {
-        enemyLife -= dmg;
+        enemyData.enemyLife -= dmg;
     }
 
 }

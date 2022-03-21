@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class RotationTraslationScript : MonoBehaviour
 {
-    [SerializeField] GameObject keyPrefab;
-    [SerializeField] float angleRotation = 1f;
-    [SerializeField] Transform[] wayPoints;
-
+    [SerializeField] protected ScriptableKey keyData;
+    [SerializeField] protected GameObject keyPrefab;
     // Update is called once per frame
     void Update()
     {
         RotateObject();
     }
 
-    private void RotateObject()
+    protected void RotateObject()
     {
-        keyPrefab.transform.Rotate(new Vector3(1f, 0f, 0f), angleRotation);
+        keyPrefab.transform.Rotate(new Vector3(1f, 0f, 0f), keyData.angleRotation);
     }
 }

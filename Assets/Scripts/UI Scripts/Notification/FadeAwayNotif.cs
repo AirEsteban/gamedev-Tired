@@ -8,7 +8,6 @@ public class FadeAwayNotif : MonoBehaviour
 {    
     private static void FadeAway(TextMeshProUGUI notifText)
     {
-        var auxTime = 5000f;
         Debug.Log("fadeaway");
         if(null != notifText)
         {
