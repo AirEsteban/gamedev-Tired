@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +10,17 @@ public class Movement : MonoBehaviour
     [SerializeField] float runningSpeed = 2f;
     [SerializeField] float rotationSpeed  = 5f;
     [SerializeField] TMPro.TextMeshProUGUI playerLifeText;
+    [SerializeField] AudioClip pickUpSound;
+    public static event Action OnDeath;
     private CharacterController charCont;
     private float x, xDir, y;
     private float playerLife = 100f;
 
+
+    private void Awake()
+    {
+        SyringeColliderScript.OnDamage += TakeDmg;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -71,19 +79,21 @@ public class Movement : MonoBehaviour
 
     public void TakeDmg(float dmg)
     {
+        Debug.Log("OnDamage event response invoked by the Movement Script");
         playerLife -= dmg;
         playerLifeText.SetText("{0}%", playerLife);
         if (playerLife <= 0f)
         {
-            SceneManager.LoadScene((int)Scenes.FIRSTLEVEL);
+            playerLifeText.SetText("{0}%", 0);
+            Debug.Log("OnDeath event fired from the Movement Script");
+            OnDeath?.Invoke();
+            //SceneManager.LoadScene((int)Scenes.FIRSTLEVEL);
             // Game Over
         }
     }
 
     private void LoadScene()
     {
-        // Como seria mejor manejar estas cuestiones? Digamos que quiero que reinicie la escena, pero si
-        // tengo la llave, que aparezca como inactiva asi no la veo más y puedo pasar directo por la puerta.
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         if (GameManager.instance.gotItuRustKey)
         {
@@ -96,4 +106,31 @@ public class Movement : MonoBehaviour
         }
         
     }
+
+    public void PlayHangingScreamer()
+    {
+        Debug.Log("OnHangingRoomEnter UnityEvent response made by the Movement Script");
+        var audioSrc = this.GetComponent<AudioSource>();
+        if(null != audioSrc)
+        {
+            audioSrc.PlayOneShot(audioSrc.clip);
+        }
+    }
+
+    public void PlayPickUpItemMusic()
+    {
+        Debug.Log("OnPickUpKey UnityEvent response made by the Movement Script");
+        var audioSrc = this.GetComponent<AudioSource>();
+        if(null != audioSrc)
+        {
+            audioSrc.PlayOneShot(pickUpSound);
+        }
+    }
+
+    public void PlayPickUpKeyAnimation(Transform lookAtGameObject)
+    {
+        Debug.Log("OnPickUpScreamer UnityEvent response made by the Movement Script");
+        this.transform.LookAt(lookAtGameObject, Vector3.up);
+    }
+
 }

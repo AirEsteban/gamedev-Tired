@@ -5,7 +5,18 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class FadeAwayNotif : MonoBehaviour
-{    
+{
+    private TMPro.TextMeshProUGUI txtGameOver;
+    void Awake()
+    {
+        Movement.OnDeath += ShowUIAndStopPlaying;
+    }
+
+    private void Start()
+    {
+        txtGameOver = GetComponent<TMPro.TextMeshProUGUI>();
+    }
+
     private static void FadeAway(TextMeshProUGUI notifText)
     {
         Debug.Log("fadeaway");
@@ -30,5 +41,15 @@ public class FadeAwayNotif : MonoBehaviour
         {
             Debug.Log("no encontrado");
         }
+    }
+    private void ShowUIAndStopPlaying()
+    {
+        if(null != txtGameOver)
+        {
+            Debug.Log("OnDeath Event response from FadeAwayNotif Script");
+            txtGameOver.SetText("Game Over!");
+            // Just need to stop playing
+        }
+       
     }
 }

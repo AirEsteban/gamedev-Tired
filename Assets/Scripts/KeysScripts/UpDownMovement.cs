@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UpDownMovement : RotationTraslationScript
 {
@@ -17,7 +18,7 @@ public class UpDownMovement : RotationTraslationScript
     void Update()
     {
         base.RotateObject();
-        MoveUpAndDown();
+        //MoveUpAndDown();
     }
 
     private void MoveUpAndDown()
