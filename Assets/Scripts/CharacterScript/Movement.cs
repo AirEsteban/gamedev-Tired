@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
@@ -11,10 +13,13 @@ public class Movement : MonoBehaviour
     [SerializeField] float rotationSpeed  = 5f;
     [SerializeField] TMPro.TextMeshProUGUI playerLifeText;
     [SerializeField] AudioClip pickUpSound;
+    [SerializeField] AudioClip[] hurtAudio = new AudioClip[3];
     public static event Action OnDeath;
+    [SerializeField] public UnityEvent OnTakeDmg;
     private CharacterController charCont;
     private float x, xDir, y;
     private float playerLife = 100f;
+    private AudioSource audioSrc;
 
 
     private void Awake()
@@ -24,6 +29,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSrc = GetComponent<AudioSource>();
         charCont = GetComponent<CharacterController>();
         playerLife = 100f;
         runningSpeed = 2f;
@@ -81,7 +87,15 @@ public class Movement : MonoBehaviour
     {
         Debug.Log("OnDamage event response invoked by the Movement Script");
         playerLife -= dmg;
+        if(null != audioSrc)
+        {
+            audioSrc.volume = 0.3f;
+            var ind = UnityEngine.Random.Range(0, hurtAudio.Length);
+            audioSrc.PlayOneShot(hurtAudio[ind]);
+        }
+        audioSrc.volume = 1f;
         playerLifeText.SetText("{0}%", playerLife);
+        OnTakeDmg?.Invoke();
         if (playerLife <= 0f)
         {
             playerLifeText.SetText("{0}%", 0);
