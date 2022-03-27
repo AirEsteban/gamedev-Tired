@@ -203,6 +203,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e5e30729233b648bb5c82c2dff5f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPickUpKey:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPickUpKeyScreamer:
+    m_PersistentCalls:
+      m_Calls: []
+  lookAtObject: {fileID: 0}
 --- !u!114 &14572854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,8 +222,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55fe31fa3debfb48af47589418abc87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyData: {fileID: 0}
   keyPrefab: {fileID: 2778560364888367866}
-  angleRotation: 1
-  wayPoints:
-  - {fileID: 0}
-  - {fileID: 0}

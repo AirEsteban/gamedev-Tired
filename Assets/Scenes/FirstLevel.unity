@@ -123,24 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &7419795 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4039579838938852834, guid: abfcbbaf993612f4cb7ba6c85addcf16, type: 3}
-  m_PrefabInstance: {fileID: 2346107809170981083}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7419801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7419795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172dc5d4c6afa2a479c8bcd8851d4cd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notificationText: You have found a key
 --- !u!1001 &10962200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3867,7 +3849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 653413579}
   m_Layer: 0
-  m_Name: ----- Post Processing-----
+  m_Name: ----- POST PROCESSING---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5388,23 +5370,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1033953245 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8608890659806305762, guid: abfcbbaf993612f4cb7ba6c85addcf16, type: 3}
-  m_PrefabInstance: {fileID: 2346107809170981083}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1033953247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033953245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de20f8e2ddb0ba04d8a14fba5d2d0e59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1051175315 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1043346862074072, guid: eeefdd9044a28504abd5e39c9e8fe5d0, type: 3}
@@ -7919,7 +7884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1583985262}
   m_Layer: 0
-  m_Name: ----- Reflection Probes----
+  m_Name: ----- REFLECTION PROBES---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10661,7 +10626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6442543370887760253, guid: f8e2851a93d791a478db5e6fb184816a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6442543370887760253, guid: f8e2851a93d791a478db5e6fb184816a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10799,6 +10764,14 @@ PrefabInstance:
     - target: {fileID: 2995264525412300342, guid: abfcbbaf993612f4cb7ba6c85addcf16, type: 3}
       propertyPath: m_LocalPosition.z
       value: 62.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732063710961494428, guid: abfcbbaf993612f4cb7ba6c85addcf16, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8046363713935378614, guid: abfcbbaf993612f4cb7ba6c85addcf16, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abfcbbaf993612f4cb7ba6c85addcf16, type: 3}
@@ -11145,7 +11118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2819141862089710809, guid: ed6273903612cf54a93abc06d32f874d, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2819141862089710809, guid: ed6273903612cf54a93abc06d32f874d, type: 3}
       propertyPath: m_LocalPosition.x
