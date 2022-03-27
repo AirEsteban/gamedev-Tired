@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public bool gotItuRustKey = false;
+    public bool gotExitKey = false;
 
     private void Awake()
     {

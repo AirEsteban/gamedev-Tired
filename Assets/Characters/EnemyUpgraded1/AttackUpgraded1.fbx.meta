@@ -27,6 +27,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Mort_Guard_MAT
     second: {fileID: 2100000, guid: 0555bce8d763dc24aae61fa278e9ef68, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Mortimer_diffuse
+    second: {fileID: 2800000, guid: 6bd6d2a9f2878c94e983bee8b45ced59, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Mortimer_normal
+    second: {fileID: 2800000, guid: 59bdd1a8e90e7a74aada5829792b8c8a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Mortimer_specular
+    second: {fileID: 2800000, guid: a967c6e8b663fc24192a3344a1106fd9, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
