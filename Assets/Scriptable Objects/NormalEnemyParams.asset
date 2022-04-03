@@ -15,5 +15,5 @@ MonoBehaviour:
   charSpeed: 2
   charSpeedRotation: 4.2
   timeToAttack: 0.85
-  enemyLife: 125
+  enemyLife: 0
   bulletSpeed: 7

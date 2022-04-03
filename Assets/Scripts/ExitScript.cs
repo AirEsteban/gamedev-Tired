@@ -13,7 +13,7 @@ public class ExitScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("ayñ ha ocurrido un error");
+            Debug.Log("An error has ocurred.");
         }
     }
 }

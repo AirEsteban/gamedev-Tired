@@ -11,6 +11,11 @@ public class SpitAttackCollider : MonoBehaviour
         {
             collision.gameObject.GetComponent<FollowWpAndAttack>().TakeDmg(dmg);
         }
+
+        if (collision.gameObject.CompareTag("EnemyUpg"))
+        {
+            collision.gameObject.GetComponent<UpgradedAttack>().TakeDmg(dmg);
+        }
         Destroy(this.gameObject);
     }
 }

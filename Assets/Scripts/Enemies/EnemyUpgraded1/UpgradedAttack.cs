@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class UpgradedAttack : MonoBehaviour
 {
-    [SerializeField] Transform[] attPoints = new Transform[6];
-    [SerializeField] float timeToAttack;
-    [SerializeField] GameObject bullet;
-    [SerializeField] float bulletSpeed;
+    [SerializeField] ScriptableUpgEnemy upgEnemyData;
+    [SerializeField] public Transform[] attPoints = new Transform[6];
     private float playAnimationTime = 5f;
     private float auxPlayAnimation;
     private float auxTimeToAttack;
 
     private void Start()
     {
-        auxTimeToAttack = timeToAttack;
+        auxTimeToAttack = upgEnemyData.timeToAttack;
         auxPlayAnimation = playAnimationTime;
+        upgEnemyData.enemyLife = 200f;
     }
     // Update is called once per frame
     void Update()
@@ -42,15 +42,24 @@ public class UpgradedAttack : MonoBehaviour
         else
         {
             ThrowRandomAttack();
-            auxTimeToAttack = timeToAttack;
+            auxTimeToAttack = upgEnemyData.timeToAttack;
         }
     }
 
     private void ThrowRandomAttack()
     {
         var randIndex = Random.Range(0, attPoints.Length);
-        var throwable = Instantiate(bullet, attPoints[randIndex].position, attPoints[randIndex].rotation);
+        var throwable = Instantiate(upgEnemyData.bullet, attPoints[randIndex].position, attPoints[randIndex].rotation);
         throwable.transform.localScale += new Vector3(1.5f, 1.5f, 1.5f);
-        throwable.GetComponent<Rigidbody>().AddForce(attPoints[randIndex].forward * bulletSpeed, ForceMode.Impulse);
+        throwable.GetComponent<Rigidbody>().AddForce(attPoints[randIndex].forward * upgEnemyData.bulletSpeed, ForceMode.Impulse);
+    }
+
+    public void TakeDmg(float dmg)
+    {
+        upgEnemyData.enemyLife -= dmg;
+        if (upgEnemyData.enemyLife <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

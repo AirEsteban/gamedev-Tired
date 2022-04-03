@@ -10,6 +10,7 @@ TagManager:
   - GelBall
   - ituRustKey
   - NotificationText
+  - EnemyUpg
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ public class ScriptableNormalEnemy : ScriptableObject
     public float charSpeed;
     public float charSpeedRotation;
     public float timeToAttack;
-    public float enemyLife;
+    public float enemyLife = 120;
     // Bullet GameObject
     public float bulletSpeed;
 }

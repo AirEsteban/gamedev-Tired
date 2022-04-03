@@ -19,12 +19,14 @@ public class FollowWpAndAttack : MonoBehaviour
     private int actIndex;
     public bool canAttack = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
         actIndex = 0;
         anim = GetComponent<Animator>();
         auxTimeToAttack = enemyData.timeToAttack;
+        enemyData.enemyLife = 120f;
     }
 
     // Update is called once per frame
@@ -100,6 +102,10 @@ public class FollowWpAndAttack : MonoBehaviour
     public void TakeDmg(float dmg)
     {
         enemyData.enemyLife -= dmg;
+        if(enemyData.enemyLife <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 }
