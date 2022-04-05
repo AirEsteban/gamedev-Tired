@@ -18,4 +18,6 @@ public class RotationBehavoiur : MonoBehaviour
         yDir += transform.position.y;
         transform.localRotation = Quaternion.Euler(xDir, yDir, 0f);
     }
+
+    
 }

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public bool gotItuRustKey = false;
     public bool gotExitKey = false;
+    public bool isPanelActive = false;
 
     private void Awake()
     {
