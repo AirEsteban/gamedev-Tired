@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Singletons\GameManager\GameManager.cs" />
     <Compile Include="Assets\Scripts\HelpObject\TriggerEnterNotification.cs" />
     <Compile Include="Assets\Scripts\Enemies\NormalEnemy\FollowWpAndAttack.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\Notification\OpenPanel.cs" />
     <Compile Include="Assets\PostProcess\DmgEffect.cs" />
     <Compile Include="Assets\Scripts\CharacterScript\Attack.cs" />
     <Compile Include="Assets\Scripts\DoorAnimationScript\DoubleDoorRaycast.cs" />
@@ -82,11 +83,10 @@
     <Compile Include="Assets\Exit.cs" />
     <Compile Include="Assets\Scripts\LightingScripts\OnOffLamp.cs" />
     <Compile Include="Assets\Scripts\GelGenerator\GelBallCollider.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\Notification\ClosePanel.cs" />
     <Compile Include="Assets\Scripts\GeneralPurposesScript\SaveToInventory.cs" />
     <Compile Include="Assets\Scripts\HelpObject\RotationBehavoiur.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\MainMenu\MainMenuScript.cs" />
-    <Compile Include="Assets\Scripts\UI Scripts\Notification\ClosePanel.cs" />
-    <Compile Include="Assets\Scripts\UI Scripts\Notification\OpenPanel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -105,6 +105,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\SkySeries Freebie\Hdri setup.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
