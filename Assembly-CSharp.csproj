@@ -87,13 +87,21 @@
     <Compile Include="Assets\Scripts\GeneralPurposesScript\SaveToInventory.cs" />
     <Compile Include="Assets\Scripts\HelpObject\RotationBehavoiur.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\MainMenu\MainMenuScript.cs" />
+    <Compile Include="Assets\Materials\Tom&apos;s Terrain Tools\Scripts\TreeExplosion.cs" />
+    <Compile Include="Assets\Materials\Tom&apos;s Terrain Tools\Scripts\SpawnInArea.cs" />
+    <Compile Include="Assets\Materials\Tom&apos;s Terrain Tools\Scripts\PlaceOnSurfaceAtStart.cs" />
+    <Compile Include="Assets\Materials\Tom&apos;s Terrain Tools\Scripts\KeepOnSurface.cs" />
+    <Compile Include="Assets\Materials\Tom&apos;s Terrain Tools\Scripts\ForceGrassDistanceInEditor.cs" />
+    <Compile Include="Assets\Materials\Tom&apos;s Terrain Tools\Scripts\TerrainQualitySettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Materials\Tom&apos;s Terrain Tools\Example Data\Terragen Sources\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Materials\stylezed low poly props\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -105,7 +113,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\SkySeries Freebie\Hdri setup.txt" />
+    <None Include="Assets\Materials\SkySeries Freebie\Hdri setup.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
