@@ -112,7 +112,6 @@ public class Movement : MonoBehaviour
         if (GameManager.instance.gotItuRustKey)
         {
             Debug.Log("Got the Key");
-
         }
         else
         {

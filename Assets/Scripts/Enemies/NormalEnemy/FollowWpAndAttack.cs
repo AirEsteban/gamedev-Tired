@@ -14,6 +14,7 @@ public class FollowWpAndAttack : MonoBehaviour
     public Transform attackedObj;
 
     // Auxiliar properties
+    [SerializeField] bool doesAttack = true;
     private float auxTimeToAttack = 0f;
     private Animator anim;
     private int actIndex;
@@ -32,7 +33,15 @@ public class FollowWpAndAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MakeBehaviour();
+        if (doesAttack)
+        {
+            MakeBehaviour();
+        }
+        else
+        {
+            FollowWp();
+        }
+        
     }
 
     private void MakeBehaviour()
@@ -41,6 +50,7 @@ public class FollowWpAndAttack : MonoBehaviour
         var attackedObjPos = attackedObj.position - gameObject.transform.position;
         if (Mathf.Abs(attackedObjPos.magnitude) <= 5f)
         {
+
             var charRot = Quaternion.LookRotation(attackedObjPos, Vector3.up);
             transform.localRotation = Quaternion.Lerp(transform.rotation, charRot, enemyData.charSpeedRotation * Time.deltaTime);
             if (transform.localRotation.w <= 0.2f)
@@ -48,13 +58,12 @@ public class FollowWpAndAttack : MonoBehaviour
                 anim.SetBool("walk", false);
                 Attack(attackedObjPos, anim);
             }
-            
+
         }
         else
         {
             FollowWp();
         }
-        
     }
 
     private void FollowWp()

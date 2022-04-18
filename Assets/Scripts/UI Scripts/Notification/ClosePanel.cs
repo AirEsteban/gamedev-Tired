@@ -10,6 +10,7 @@ public class ClosePanel : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape) && GameManager.instance.isPanelActive)
         {
             this.gameObject.SetActive(false);
+            GameManager.instance.isPanelActive = false;
         }
     }
 }

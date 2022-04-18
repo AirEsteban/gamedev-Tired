@@ -11,6 +11,7 @@ TagManager:
   - ituRustKey
   - NotificationText
   - EnemyUpg
+  - GraveyardNotification
   layers:
   - Default
   - TransparentFX

@@ -5,8 +5,48 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: mixamo.com
-  externalObjects: {}
+    second: Sad Walk
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch11_1001_Diffuse
+    second: {fileID: 2800000, guid: 9a7bc016d67d789458955c8d43c42248, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch11_1001_Glossiness
+    second: {fileID: 2800000, guid: acc0bd0252424fa47b078a05cdb1545f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch11_1001_Normal
+    second: {fileID: 2800000, guid: ad957861763877749a99745f337c752d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch11_1001_Specular
+    second: {fileID: 2800000, guid: 1387cb77bc219244ea75a1aec010b44b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch11_1002_Diffuse
+    second: {fileID: 2800000, guid: 1776af1200e3bad46afb233921c7c69d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch11_1002_Glossiness
+    second: {fileID: 2800000, guid: a4e2de00327f56949b7b39740de039c4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch11_1002_Normal
+    second: {fileID: 2800000, guid: 75c8fc165bdeb584eb994ead19bfb6ab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch11_1002_Specular
+    second: {fileID: 2800000, guid: ec1b2271220b8b04b97f5f94ba5039a9, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -33,7 +73,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Sad Walk
+      takeName: mixamo.com
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
