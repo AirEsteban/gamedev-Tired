@@ -5,24 +5,24 @@ using UnityEngine;
 public class FollowWpAndAttack : MonoBehaviour
 {
     // Game objects
-    [SerializeField] ScriptableNormalEnemy enemyData;
-    [SerializeField] GameObject attackPoint;
+    [SerializeField] protected ScriptableNormalEnemy enemyData;
+    [SerializeField] protected GameObject attackPoint;
     [SerializeField] GameObject bullet;
 
     // Transform Properties
-    [SerializeField] List<Transform> wayPoints = new List<Transform>();
+    [SerializeField] protected List<Transform> wayPoints = new List<Transform>();
     public Transform attackedObj;
 
     // Auxiliar properties
     [SerializeField] bool doesAttack = true;
     private float auxTimeToAttack = 0f;
-    private Animator anim;
+    protected Animator anim;
     private int actIndex;
     public bool canAttack = false;
 
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         actIndex = 0;
         anim = GetComponent<Animator>();
@@ -66,7 +66,7 @@ public class FollowWpAndAttack : MonoBehaviour
         }
     }
 
-    private void FollowWp()
+    protected void FollowWp()
     {
         var nextWp = wayPoints[actIndex].position - gameObject.transform.position;
         anim.SetBool("attack", false);

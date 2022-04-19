@@ -56,7 +56,6 @@
      <Compile Include="Assets\Materials\Tom&apos;s Terrain Tools\Scripts\ForceGrassDistanceInEditor.cs" />
      <Compile Include="Assets\Scripts\Enemies\NormalEnemy\ScriptableNormalEnemy.cs" />
      <Compile Include="Assets\Scripts\KeysScripts\ScriptableKey.cs" />
-     <Compile Include="Assets\Scripts\HelpObject\TriggerEnterNotification.cs" />
      <Compile Include="Assets\Materials\Tom&apos;s Terrain Tools\Scripts\TerrainQualitySettings.cs" />
      <Compile Include="Assets\Scripts\Enemies\NormalEnemy\FollowWpAndAttack.cs" />
      <Compile Include="Assets\PostProcess\DmgEffect.cs" />
@@ -84,6 +83,7 @@
      <Compile Include="Assets\Scripts\GelGenerator\GelBallCollider.cs" />
      <Compile Include="Assets\Scripts\GeneralPurposesScript\SaveToInventory.cs" />
      <Compile Include="Assets\Scripts\HelpObject\RotationBehavoiur.cs" />
+     <Compile Include="Assets\Scripts\Enemies\BossBehaviour\BossBehaviour.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Materials\Tom&apos;s Terrain Tools\Example Data\Terragen Sources\README.txt" />

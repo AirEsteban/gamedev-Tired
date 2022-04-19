@@ -9,14 +9,12 @@ public class OpenPanel : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Graveyard trigger active.");
-            panelToActivate.SetActive(true);
-            GameManager.instance.isPanelActive = true;
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            Debug.Log("Graveyard trigger not active.");
+            if (!GameManager.instance.isPanelActive)
+            {
+                panelToActivate.SetActive(true);
+                GameManager.instance.isPanelActive = true;
+                Destroy(this.gameObject);
+            }
         }
     }
 }
