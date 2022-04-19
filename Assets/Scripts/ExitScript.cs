@@ -7,9 +7,10 @@ public class ExitScript : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(GameManager.instance.gotExitKey);
         if (other.gameObject.CompareTag("Player") && GameManager.instance.gotExitKey)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else
         {

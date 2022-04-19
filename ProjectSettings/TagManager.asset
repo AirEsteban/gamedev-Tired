@@ -12,6 +12,7 @@ TagManager:
   - NotificationText
   - EnemyUpg
   - GraveyardNotification
+  - SprayAttack
   layers:
   - Default
   - TransparentFX

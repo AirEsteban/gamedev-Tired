@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HospitalLevel/FirstLevel.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/ForestLevel/ForestLevel.unity
+    guid: 45859d52f08968d4787221c29bfb39ed
+  - enabled: 1
+    path: Assets/Scenes/FinishMenu/Finish.unity
+    guid: a67e8ff295ba32e4f887c1474bc9f926
   m_configObjects: {}

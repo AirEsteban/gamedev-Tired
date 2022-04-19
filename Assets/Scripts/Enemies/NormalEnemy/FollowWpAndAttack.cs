@@ -6,7 +6,7 @@ public class FollowWpAndAttack : MonoBehaviour
 {
     // Game objects
     [SerializeField] protected ScriptableNormalEnemy enemyData;
-    [SerializeField] protected GameObject attackPoint;
+    [SerializeField] GameObject attackPoint;
     [SerializeField] GameObject bullet;
 
     // Transform Properties
@@ -27,7 +27,6 @@ public class FollowWpAndAttack : MonoBehaviour
         actIndex = 0;
         anim = GetComponent<Animator>();
         auxTimeToAttack = enemyData.timeToAttack;
-        enemyData.enemyLife = 120f;
     }
 
     // Update is called once per frame
@@ -108,7 +107,7 @@ public class FollowWpAndAttack : MonoBehaviour
         }
     }
 
-    public void TakeDmg(float dmg)
+    public virtual void TakeDmg(float dmg)
     {
         enemyData.enemyLife -= dmg;
         if(enemyData.enemyLife <= 0)

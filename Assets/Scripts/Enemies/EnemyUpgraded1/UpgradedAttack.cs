@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public class UpgradedAttack : MonoBehaviour
 {
     [SerializeField] ScriptableUpgEnemy upgEnemyData;
     [SerializeField] public Transform[] attPoints = new Transform[6];
+    [SerializeField] public UnityEvent OnDestroy; 
     private float playAnimationTime = 5f;
     private float auxPlayAnimation;
     private float auxTimeToAttack;
@@ -60,6 +61,7 @@ public class UpgradedAttack : MonoBehaviour
         if (upgEnemyData.enemyLife <= 0)
         {
             Destroy(this.gameObject);
+            OnDestroy.Invoke();
         }
     }
 }

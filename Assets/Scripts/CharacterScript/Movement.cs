@@ -106,6 +106,14 @@ public class Movement : MonoBehaviour
         }
     }
 
+    public void OnParticleCollision(GameObject other)
+    {
+        if (other.CompareTag("SprayAttack"))
+        {
+            this.TakeDmg(20);
+        }
+    }
+
     private void LoadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

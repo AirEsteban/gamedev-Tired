@@ -507,10 +507,12 @@ m_PackageAssets:
         - 10.7.0
         - 10.8.0
         - 10.8.1
+        - 10.9.0
         compatible:
         - 10.7.0
         - 10.8.0
         - 10.8.1
+        - 10.9.0
         verified: 10.7.0
       dependencies:
       - name: com.unity.mathematics
@@ -683,10 +685,12 @@ m_PackageAssets:
         - 10.7.0
         - 10.8.0
         - 10.8.1
+        - 10.9.0
         compatible:
         - 10.7.0
         - 10.8.0
         - 10.8.1
+        - 10.9.0
         verified: 10.7.0
       dependencies:
       - name: com.unity.render-pipelines.core
@@ -3223,10 +3227,12 @@ m_PackageAssets:
         - 10.7.0
         - 10.8.0
         - 10.8.1
+        - 10.9.0
         compatible:
         - 10.7.0
         - 10.8.0
         - 10.8.1
+        - 10.9.0
         verified: 10.7.0
       dependencies:
       - name: com.unity.ugui

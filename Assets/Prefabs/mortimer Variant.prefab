@@ -366,43 +366,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.0512
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.075
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1726
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.016
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.83
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.69337505
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.72057694
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -410,7 +410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -92.204
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -418,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_Name
-      value: mortimer
+      value: mortimer Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ce0a5421f0f57014cbab816e4eb15955, type: 3}
       propertyPath: m_TagString
@@ -488,3 +488,18 @@ MonoBehaviour:
   - {fileID: 302232065}
   - {fileID: 547528976}
   - {fileID: 2073338454}
+  OnDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 65249288, guid: 119cb0597a3c9084ca3b223a0caf4f69, type: 3}
+        m_TargetAssemblyTypeName: BossBehaviour, Assembly-CSharp
+        m_MethodName: DecrementAliveEnemies
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
